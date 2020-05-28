@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>API documentation</h1>
+
+<h2>API for Dictionary:</h2>
+
+<h3><span class="method">GET</span> <span class="api_link">/api/dictionary</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Retrieve all words and their definitions in the dictionary.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">GET</span> <span class="api_link">/api/dictionary/:word</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Retrieve the definition for specified word.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 404 Not Found</span></h3>
+    <h4><span class="keyword">Response Body</span>: []</h4>
+    <h4><span class="keyword">Reason</span>: cannot find the specified word</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">POST</span> <span class="api_link">/api/dictionary</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<h4><span class="keyword">Required format</span>: { word:'your-word-here', def:'definition-here' }</h4>
+<p>Add a word into dictionary.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 201 Created</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 400 Bad Request</span></h3>
+    <h4><span class="keyword">Response Body</span>: []</h4>
+    <h4><span class="keyword">Reason</span>: required format not satisfied, need to be { word:'your-word-here',
+        def:'definition-here' }</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">PUT</span> <span class="api_link">/api/dictionary</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<h4><span class="keyword">Required format</span>: { word:'your-word-here', def:'definition-here' }</h4>
+<p>Update the definition of the specified word.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 400 Bad Request</span></h3>
+    <h4><span class="keyword">Response Body</span>: []</h4>
+    <h4><span class="keyword">Reason</span>: required format not satisfied, need to be { word:'your-word-here',
+        def:'definition-here' }</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 404 Not Found</span></h3>
+    <h4><span class="keyword">Response Body</span>: []</h4>
+    <h4><span class="keyword">Reason</span>: cannot find the specified word</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">DELETE</span> <span class="api_link">/api/dictionary/:word</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Delete a word and its definition from dictionary, and if the word appears multiple times in the dictionary, only
+    delete the first one occurred.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 204 No Content</span></h3>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">DELETE</span> <span class="api_link">/api/dictionary/:word/all</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Delete a word and its definition from dictionary, and if the word appears multiple times in the dictionary, delete
+    them all.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 204 No Content</span></h3>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<p>&nbsp;</p>
+<h2>API for News Articles:</h2>
+
+<h3><span class="method">GET</span> <span class="api_link">/api/news</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Retrieve all news articles.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">GET</span> <span class="api_link">/api/news/article/:docID</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Retrieve news article with specified docID.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">GET</span> <span class="api_link">/api/news/author/:author/articles</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Retrieve articles written by specified author. Support fuzzy search.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">GET</span> <span class="api_link">/api/news/article?author=&docID=</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Retrieve article with specified author or docID, or both. Support fuzzy search for author field.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 400 Bad Request</span></h3>
+    <h4><span class="keyword">Response Body</span>: Query parameters [ author | docID ] required, cannot be empty</h4>
+    <h4><span class="keyword">Reason</span>: require at least one query parameter from [ author | docID ]</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<h3><span class="method">PUT</span> <span class="api_link">/api/news/update/author/:before/:after</span> <span
+            class="http_version">HTTP/1.1</span>
+</h3>
+<h4><span class="keyword">Host</span>: zew20-assignment3b.glitch.me</h4>
+<p>Update the author name.</p>
+<h3><span class="method">Possible responses:</span></h3>
+<div class="box">
+    <h3><span class="success">HTTP/1.1 200 OK</span></h3>
+    <h4><span class="keyword">Content-Type</span>: application/json; charset=utf-8</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 404 Not Found</span></h3>
+    <h4><span class="keyword">Response Body</span>: []</h4>
+    <h4><span class="keyword">Reason</span>: cannot find the matched author</h4>
+</div>
+<p></p>
+<div class="box">
+    <h3><span class="error">HTTP/1.1 500 Internal Server Error</span></h3>
+</div>
+<p>&nbsp;</p>
+<hr>
+
+<!-- include the Glitch button to show what the webpage is about and
+to make it easier for folks to view source and remix -->
+<div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+<script src="https://button.glitch.me/button.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    font-family: Monaco, Consolas, "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+}
+
+h1 {
+    font-style: italic;
+    color: #373fff;
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: x-large;
+}
+
+p {
+    font-size: medium;
+}
+
+.picture {
+    width: 320px;
+    border-radius: 8px;
+}
+
+ol {
+    list-style-type: upper-roman;
+}

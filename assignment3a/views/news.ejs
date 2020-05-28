@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>News</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<% id = 0 %>
+<% for (let i = 0; i < data.length; i++) { %>
+    <% id = id + 1 %>
+    <h3>Article <%= id %></h3>
+    <table>
+        <tr>
+            <th>Title</th>
+            <td><%= data[i].title %></td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td><%= data[i].author %></td>
+        </tr>
+        <tr>
+            <th>DocID</th>
+            <td><%= data[i].docID %></td>
+        </tr>
+        <tr>
+            <th>URL</th>
+            <td><a href=<%= data[i].url %>><%= data[i].url %></a></td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <% content = data[i].content.replace("$", "&#36;") %>
+            <% if (content.length > 2000)  { %>
+                <td class="justify"><%= content.slice(0, 2000) + '...[Omitted ' + (content.length - 2000) + ' characters]' %></td>
+            <% } else { %>
+                <td class="justify"><%= content %></td>
+            <% } %>
+        </tr>
+    </table>
+    <p>&nbsp;</p>
+    <!--    <p>&nbsp;</p>-->
+<% } %>
+</body>
+</html>

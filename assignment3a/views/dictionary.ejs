@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dictionary</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<% if (locals.dictionary){ %>
+    <% for (let el in dictionary) { %>
+        <h1><%= el %></h1>
+        <h3>Definition:</h3>
+        <p class="a"><%= dictionary[el] %></p>
+    <% } %>
+<% } %>
+<% if (locals.word) { %>
+    <h1><%= word %></h1>
+    <h3>Definition:</h3>
+    <p class="a"><%= def %></p>
+<% } %>
+</body>
+</html>

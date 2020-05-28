@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Activity 4</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+<h1>Hi there!</h1>
+
+<p>
+    This is the web page for the week four activity. You're going to make it more interesting with HTML forms and
+    Javascript!
+</p>
+
+<!--<p>-->
+<!--    Put your HTML form code here!-->
+<!--</p>-->
+<form>
+    <p>
+        <label for="username">
+            <span>Username: </span>
+            <input type="text" id="username" name="username">
+            <span class="error" id="username-error" aria-live="polite"></span>
+        </label>
+    </p>
+    <p>
+        <label for="email">
+            <span>Email: </span>
+            <input type="email" id="email">
+            <span class="error" id="email-error" aria-live="polite"></span>
+        </label>
+    </p>
+    <p>
+        <label for="password">
+            <span>Password (8 characters minimum): </span>
+            <input type="password" id="password" name="password" minlength="8">
+            <span class="error" id="password-error" aria-live="polite"></span>
+        </label>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</form>
+<!--<p>-->
+<!--    Put the data from LocalStorage here! Or put it somewhere else, I don't care.-->
+<!--</p>-->
+<p>
+    data from LocalStorage:
+</p>
+<p>
+    Username: <span id="get-username"></span><br>
+    Email: <span id="get-email"></span><br>
+    Password: <span id="get-password"></span>
+</p>
+
+<!-- include the Glitch button to show what the webpage is about and
+      to make it easier for folks to view source and remix -->
+<div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+<script src="https://button.glitch.me/button.js"></script>
+</body>
+</html>

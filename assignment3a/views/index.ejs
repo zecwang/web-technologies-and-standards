@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>
+    This is my API documentation page
+</h1>
+<h2>Fragments of two JSON resources:</h2>
+<h3>Dictionary</h3>
+<pre><%= dictionary %></pre>
+<h3>News Articles</h3>
+<pre><%= news %>></pre>
+<h2>API documentation</h2>
+<h4>Get /dictionary</h4>
+<p>Retrieve all words and their definitions in the dictionary.</p>
+<hr>
+<h4>Get /dictionary/:word</h4>
+<p>Retrieve the definition for specified word</p>
+<pre>Error Status: 404, Return: "Not Found"</pre>
+<hr>
+<h4>Post /dictionary</h4>
+<p>Add a new word into dictionary</p>
+<pre>Required format: { word:'your-word-here', def:'definition-here' }</pre>
+<pre>Error Status: 400, Return: []</pre>
+<hr>
+<h4>Put /dictionary</h4>
+<p>Replace the definition of a word</p>
+<pre>Required format: { word:'your-word-here', def:'definition-here' }</pre>
+<pre>Error Status: 400, Return: []</pre>
+<hr>
+<h4>Delete /dictionary/:word</h4>
+<p>Delete a word and its definition from dictionary</p>
+<pre>Error Status: 404, Return: ':word' not exists, no need for deleting</pre>
+<hr>
+<h4>Get /news/all</h4>
+<p>Retrieve all news articles</p>
+<hr>
+<h4>Get /news/article/:docID</h4>
+<p>Retrieve news article with specified docID</p>
+<pre>Error Status: 404, Return: "Not Found"</pre>
+<hr>
+<h4>Get /news/author/:author/articles</h4>
+<p>Retrieve articles written by specified author</p>
+<pre>Error Status: 404, Return: []</pre>
+<hr>
+<h4>Get /news/article?author=&docID=</h4>
+<p>Retrieve article with specified author or docID, or both</p>
+<pre>Error Status: 400, Return: Query parameters required, cannot be empty</pre>
+<pre>Error Status: 404, Return: []</pre>
+</body>
+</html>

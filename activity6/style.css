@@ -1,0 +1,29 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-size: 17px;
+    margin-bottom: 140px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 125px;
+    background-color: black;
+    color: white;
+}
+
+ol.a {
+    list-style-type: upper-roman;
+}
+
+ol.b {
+    list-style-type: lower-alpha;
+}
+
+div {
+    text-align: justify;
+}
